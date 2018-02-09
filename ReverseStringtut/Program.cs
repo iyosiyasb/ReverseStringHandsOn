@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace ReverseStringtut
 {
@@ -6,7 +7,12 @@ namespace ReverseStringtut
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+			string inputString = "iyosiyas meseret simret helina jerusalem abush nahom caleb amukaw mestawot amanuel semayat";
+			string resultString = string.Join(" ", inputString.Split(' ')
+				.Select(x => new string(x.Reverse().ToArray())));
+
+			Console.WriteLine(resultString);
+			Console.ReadLine();
         }
     }
 }
